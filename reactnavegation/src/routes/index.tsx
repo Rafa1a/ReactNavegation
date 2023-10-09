@@ -24,12 +24,14 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import {}from '@react-navigation/native-stack';
-
+import {NavigationContainer }from  '@react-navigation/native'
+import Stack from './Stack';
 export default (props: any) => {
   return (
-    <SafeAreaView>
-      <Text>rfa</Text>
+    <SafeAreaView style={{flex:1}}>
+      <NavigationContainer>
+          <Stack/>
+      </NavigationContainer>
     </SafeAreaView>
   );
 }

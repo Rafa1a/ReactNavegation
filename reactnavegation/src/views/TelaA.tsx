@@ -1,25 +1,19 @@
-import React, {useState,useEffect,useReducer} from "react";
-import { Text, StyleSheet, SafeAreaView, View, Button } from "react-native";
-import TextoCentral from '../components/TextoCentral'
-interface CompProps {
+import React from 'react';
+import { View, Button } from 'react-native';
+import TextoCentral from '../components/TextoCentral';
+import Passstack from '../components/PassStack';
+import { useNavigation } from '@react-navigation/native';
 
-};
+const TelaA: React.FC<any> = (props) => {
+  const navigation = useNavigation();
 
-const exemplo: React.FC<any> = (props) => {
-    return (
-        <TextoCentral corfundo='#e53935'>
-            Tela A
-        </TextoCentral>
-    );
-};
-const styles = StyleSheet.create({
-    v1:{
+  return (
+
+      <TextoCentral corfundo='#e53935'>
+        Tela A
+      </TextoCentral>
    
+  );
+};
 
-    },
-    v2 : {
-        
-    }
-
-});
-export default exemplo;
+export default TelaA;

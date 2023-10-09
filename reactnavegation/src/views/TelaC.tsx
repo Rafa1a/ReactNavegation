@@ -5,7 +5,7 @@ interface CompProps {
 
 };
 
-const exemplo: React.FC<any> = (props) => {
+const TelaC: React.FC<any> = (props) => {
     return (
         <TextoCentral corfundo='#9932CD'>
             Tela C
@@ -22,4 +22,4 @@ const styles = StyleSheet.create({
     }
 
 });
-export default exemplo;
+export default TelaC;

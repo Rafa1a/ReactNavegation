@@ -19,34 +19,44 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TelaA from '../views/TelaA'
+import TelaB from '../views/TelaB'
+import TelaC from '../views/TelaC'
+import Passstack from '../components/PassStack'
 //////////////////
 const Stack = createNativeStackNavigator()
 //////
 export default (props: any) => {
+  
   return (
-    <SafeAreaView>
-      <Stack.Screen name='TelaA' component={TelaA}/>
-    </SafeAreaView>
+    <Stack.Navigator initialRouteName='TelaA'
+    screenOptions={{headerShown: true}}>
+      <Stack.Screen name='TelaA' 
+      options={{title: 'informacoes iniciais'}}>
+        {(props:any) => (
+          <Passstack {...props} avancar='TelaB'>
+              <TelaA/>
+          </Passstack>
+        )}
+      </Stack.Screen>
+      <Stack.Screen name='TelaB' >
+        {(props:any) => (
+        <Passstack {...props} avancar='TelaC' voltar>
+            <TelaB/>
+        </Passstack>)}
+      </Stack.Screen>
+      <Stack.Screen name='TelaC' >
+        {(props:any) => (
+        <Passstack {...props}  voltar avancar='TelaC'>
+            <TelaC/>
+        </Passstack>)}
+      </Stack.Screen>
+     
+    </Stack.Navigator>
   );
 }
 
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+ 
 });
 

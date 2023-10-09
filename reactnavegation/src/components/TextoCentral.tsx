@@ -5,7 +5,7 @@ interface CompProps {
 
 };
 
-const exemplo: React.FC<any> = (props) => {
+const Exemplo: React.FC<any> = (props) => {
     return (
         <View style={{
             flex:1,
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
     }
 
 });
-export default exemplo;
+export default Exemplo;
