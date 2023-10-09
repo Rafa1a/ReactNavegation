@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
@@ -24,17 +17,15 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import TextoCentral from './components/TextoCentral'
-import TelaA from './views/TelaA'
-import TelaB from './views/TelaB'
-import TelaC from './views/TelaC'
-////////////////////////////////////////////////////////
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import TelaA from '../views/TelaA'
+//////////////////
+const Stack = createNativeStackNavigator()
+//////
 export default (props: any) => {
   return (
-    <SafeAreaView style={{flex:1}}>
-      <TelaA/>
-      <TelaB/>
-      <TelaC/>
+    <SafeAreaView>
+      <Stack.Screen name='TelaA' component={TelaA}/>
     </SafeAreaView>
   );
 }
