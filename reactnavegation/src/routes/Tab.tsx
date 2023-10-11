@@ -32,7 +32,7 @@ export default (props: any) => {
   return (
     <Tab.Navigator screenOptions={({ route }) => ({
       tabBarIcon: ({ focused, color, size }) => {
-        let iconName: string | "ios-information-circle";
+        let iconName: string | "information-circle";
         switch (route.name){
           case 'TelaA':
             iconName = focused
